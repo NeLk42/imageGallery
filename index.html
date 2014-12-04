@@ -1,0 +1,33 @@
+<html ng-app="app">
+<head>
+    <title>ngTodo</title>
+</head>
+<body>
+
+<ng-view></ng-view>
+
+<!-- Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+
+<!-- Templates -->
+<script type="text/ng-template" id="/todos.html">
+    Search: <input type="text" ng-model="search.name">
+    <ul>
+        <li ng-repeat="todo in todos | filter: search">
+            <input type="checkbox" ng-model="todo.completed">
+            <a href="#/{{$index}}">{{todo.name}}</a>
+        </li>
+    </ul>
+</script>
+
+<script type="text/ng-template" id="/todoDetails.html">
+    <h1>{{ todo.name }}</h1>
+    completed: <input type="checkbox" ng-model="todo.completed">
+    note: <textarea>{{ todo.note }}</textarea>
+</script>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
