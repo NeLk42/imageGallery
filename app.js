@@ -11,8 +11,6 @@ var images = require('./routes/images');
 var app = express();
 var mongoose = require('mongoose');
 
-
-
 mongoose.connect('mongodb://localhost/todoApp', function(err) {
     if(err) {
         console.log('connection error', err);
